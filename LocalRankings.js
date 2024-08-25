@@ -5,6 +5,23 @@ const path = require("path");
 dotenv.config({path:"./config.env"}); //讀取環境變數
 let api_key = process.env.API_KEY;
 let local = process.env.local;
+let Local =""
+fs.readFile("./json/AreaCodeFile.json", (err, data) => {
+    if (err) {
+        console.error(err);
+    } else {
+        let json = JSON.parse(data);
+        json.items.forEach(item => {
+            if (item.id == local) {
+                Local = item.name               
+                return Local;
+            }
+        });
+        
+    }
+}); 
+
+
 
 async function pathoflegend_getData() {
     const url = `https://api.clashroyale.com/v1/locations/${local}/pathoflegend/players`;
@@ -20,7 +37,7 @@ async function pathoflegend_getData() {
         }
 
         const json = await response.json();
-        fs.writeFile('json/Taiwan.json', JSON.stringify(json), (err) => {
+        fs.writeFile(`json/${Local}RankingsList.json`, JSON.stringify(json), (err) => {
             if (err) {
             console.error(err);
             } else {
