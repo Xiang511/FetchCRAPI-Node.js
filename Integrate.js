@@ -1,19 +1,12 @@
 let pathoflegend_getData = require('./LocalRankings').pathoflegend_getData;
-
 let player_getData = require('./player').player_getData;
+let Getchests = require('./Getchests').Getchests;
+let battleLog = require('./battleLog').battleLog;
 
-pathoflegend_getData()
-.then(() => {
-    console.log("Local Rankings data fetched successfully!");
-    
-}).catch((error) => {
-    console.error(error.message);
-});
 
-player_getData()
-.then(() => {
-    console.log("Player data fetched successfully!");   
-})
-.catch((error) => {
-    console.error(error.message);
-});
+async function main(){
+    await player_getData();
+    await pathoflegend_getData();
+    await Getchests();
+    await battleLog();
+ }
