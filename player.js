@@ -4,8 +4,8 @@ const path = require("path");
 
 dotenv.config({path:"./config.env"}); //讀取環境變數
 let api_key = process.env.API_KEY;
-let local = process.env.local;
 let player_tag = process.env.player_tag;
+let player_name = process.env.player_name;
 
 async function player_getData() {
     const url = `https://api.clashroyale.com/v1/players/${player_tag}`;
@@ -21,7 +21,7 @@ async function player_getData() {
         }
 
         const json = await response.json();
-        fs.writeFile(`json/${player_tag}.json`, JSON.stringify(json), (err) => {
+        fs.writeFile(`json/${player_name}.json`, JSON.stringify(json), (err) => {
             if (err) {
             console.error(err);
             } else {
