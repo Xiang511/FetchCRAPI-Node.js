@@ -7,7 +7,7 @@
   "name": "fetchcrapi",
   "version": "1.0.0",
   "description": "Get CRAPI using node.js",
-  "main": "LocalRankings.js",
+  "main": "integrate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
