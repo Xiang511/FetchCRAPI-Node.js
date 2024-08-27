@@ -6,14 +6,17 @@
   },
   "name": "fetchcrapi",
   "version": "1.0.0",
+  "files":["LocalRankings.js","integrate.js","Getchests.js","battleLog.js","json/AreaCodeFile.json","config.env",".gitignore"],
   "description": "Get CRAPI using node.js",
   "main": "integrate.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node integrate.js"
   },
   "keywords": [
     "clashroyale",
-    "clashroyaleAPI"
+    "clashroyaleAPI",
+    "clashroyaleWebCrawler"
   ],
   "author": "Hsiang",
   "license": "ISC"
