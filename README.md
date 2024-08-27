@@ -28,7 +28,7 @@ https://xiang511.com/hydromechanics/TCRS.html
 
 ## Usage
 
-1. ``` npm i fetchcrapi ```
+1. Fork this [repo](https://github.com/Xiang511/FetchCRAPI-Node.js) or use  ``` https://github.com/Xiang511/FetchCRAPI-Node.js.git ```
 
 2. Go to ```config.env``` Add your Token
 
@@ -39,19 +39,11 @@ local=57000228 ( You can check AreaCodeFile to find out )
 player_tag=%2322R920J00 ( You can check in your game ) ```Due to transcoding issues all "#" must be converted to "%23" ```
 player_name=Xiang  ( your name )
 ```
-4.```node integrate.js```
+4. ```node integrate.js```
 
-5.The generated data will be displayed in the ``` json folder ```
+5. The generated data will be displayed in the ``` json folder ```
 
-6.Done
-
-## file tree ( Remember to put in your Token )
-
-![image](https://github.com/user-attachments/assets/55a57570-1033-4fad-afcc-9c27552e2b01)
-
-## The successful execution file will be here
-
-![image](https://github.com/user-attachments/assets/bd163867-bfb9-49aa-8b0d-e1fd9bcd6d5d)
+6. Done
 
 
 ## License
