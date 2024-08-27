@@ -41,7 +41,7 @@ player_name=Xiang  ( your name )
 ```
 4.```node integrate.js```
 
-5.The generated data will be displayed in the json folder
+5.The generated data will be displayed in the ``` json folder ```
 
 6.Done
 
@@ -49,8 +49,9 @@ player_name=Xiang  ( your name )
 
 ![image](https://github.com/user-attachments/assets/55a57570-1033-4fad-afcc-9c27552e2b01)
 
+## The successful execution file will be here
 
-
+![image](https://github.com/user-attachments/assets/bd163867-bfb9-49aa-8b0d-e1fd9bcd6d5d)
 
 
 ## License
