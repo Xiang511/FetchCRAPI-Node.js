@@ -5,7 +5,7 @@
     "mongoose": "^8.5.4"
   },
   "name": "@xiang511/fetchcrapi",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "files":["LocalRankings.js","integrate.js","player.js","Getchests.js","battleLog.js","json/AreaCodeFile.json","config.env",".gitignore"],
   "description": "Get CRAPI using node.js",
   "main": "Integrate.js",
@@ -19,5 +19,9 @@
     "clashroyaleWebCrawler"
   ],
   "author": "Hsiang",
-  "license": "Apache-2.0 license"
+  "license": "Apache-2.0 license",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xiang511/FetchCRAPI-Node.js"
+  }
 }
