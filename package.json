@@ -5,8 +5,8 @@
     "mongoose": "^8.5.4"
   },
   "name": "@xiang511/fetchcrapi",
-  "version": "1.0.0",
-  "files":["LocalRankings.js","integrate.js","Getchests.js","battleLog.js","json/AreaCodeFile.json","config.env",".gitignore"],
+  "version": "1.1.0",
+  "files":["LocalRankings.js","integrate.js","player.js","Getchests.js","battleLog.js","json/AreaCodeFile.json","config.env",".gitignore"],
   "description": "Get CRAPI using node.js",
   "main": "integrate.js",
   "scripts": {
