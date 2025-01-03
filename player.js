@@ -1,13 +1,8 @@
-const fs = require('fs');
-const dotenv = require('dotenv');
-const path = require("path");
+import fetch from 'node-fetch';
+import fs from 'fs';
 
-dotenv.config({path:"./config.env"}); //讀取環境變數
-let api_key = process.env.API_KEY;
-let player_tag = process.env.player_tag;
-let player_name = process.env.player_name;
 
-async function player_getData() {
+async function player_getData(api_key,player_tag) {
     const url = `https://api.clashroyale.com/v1/players/${player_tag}`;
     const headers = {
         "Content-Type": "application/json",
@@ -17,22 +12,21 @@ async function player_getData() {
     try {
         const response = await fetch(url, { headers });
         if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
+            throw new Error(`Response status: ${response.status} ${response.statusText} Please check if your API key is correct, replace # with %23 in PlayerTag`);
         }
 
         const json = await response.json();
-        fs.writeFile(`json/${player_name}.json`, JSON.stringify(json), (err) => {
+        fs.writeFile(`json/${player_tag}.json`, JSON.stringify(json), (err) => {
             if (err) {
             console.error(err);
             } else {
             
             }
         });
+        console.log("player.json created");
     } catch (error) {
         console.error(error.message);
     }
 }
 
-player_getData()
-
-exports.player_getData = player_getData;
+export { player_getData };
