@@ -1,29 +1,7 @@
-const fs = require('fs');
-const dotenv = require('dotenv');
-const path = require("path");
+import fetch from 'node-fetch';
+import fs from 'fs';
 
-dotenv.config({path:"./config.env"}); //讀取環境變數
-let api_key = process.env.API_KEY;
-let local = process.env.local;
-let Local =""
-fs.readFile("./json/AreaCodeFile.json", (err, data) => {
-    if (err) {
-        console.error(err);
-    } else {
-        let json = JSON.parse(data);
-        json.items.forEach(item => {
-            if (item.id == local) {
-                Local = item.name               
-                return Local;
-            }
-        });
-        
-    }
-}); 
-
-
-
-async function pathoflegend_getData() {
+async function pathoflegend_getData(api_key,local) {
     const url = `https://api.clashroyale.com/v1/locations/${local}/pathoflegend/players`;
     const headers = {
         "Content-Type": "application/json",
@@ -33,22 +11,21 @@ async function pathoflegend_getData() {
     try {
         const response = await fetch(url, { headers });
         if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
+            throw new Error(`Response status: ${response.status} ${response.statusText} Please check if your API key is correct, replace # with %23 in PlayerTag`);
         }
 
         const json = await response.json();
-        fs.writeFile(`json/${Local}RankingsList.json`, JSON.stringify(json), (err) => {
+        fs.writeFile(`json/${local}RankingsList.json`, JSON.stringify(json), (err) => {
             if (err) {
             console.error(err);
             } else {
             
             }
         });
+        console.log("RankingsList.json created");
     } catch (error) {
         console.error(error.message);
     }
 }
 
-pathoflegend_getData();
-
-exports.pathoflegend_getData = pathoflegend_getData;
+export { pathoflegend_getData };
