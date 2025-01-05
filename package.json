@@ -8,7 +8,6 @@
   "type": "module",
   "files": [
     "LocalRankings.js",
-    "integrate.js",
     "player.js",
     "Getchests.js",
     "battleLog.js",
@@ -16,7 +15,7 @@
     ".gitignore"
   ],
   "description": "Get ClashRoyale using node.js",
-  "main": "Integrate.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": ""
